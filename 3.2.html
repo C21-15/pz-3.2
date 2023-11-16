@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM і JavaScript</title>
+</head>
+<body>
+    <div id="myDiv" class="highlight">Це <span>div</span> елемент.</div>
+    <p>Абзац</p>
+    <ul>
+        <li>Елемент списку 1</li>
+        <li>Елемент списку 2</li>
+    </ul>
+    <a href="https://www.example.com">Посилання</a>
+
+    <script>
+     
+        const myDiv = document.getElementById('myDiv');
+        myDiv.style.backgroundColor = 'lightblue';
+        myDiv.textContent = 'Змінений текст div елементу';
+
+      
+        const ulElement = document.querySelector('ul');
+        const liElements = ulElement.getElementsByTagName('li');
+        for (const li of liElements) {
+            console.log(li.textContent);
+        }
+
+    
+        const link = document.querySelector('a');
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            alert('Ви натиснули на посилання!');
+        });
+    </script>
+</body>
+</html>
